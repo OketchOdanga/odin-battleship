@@ -16,8 +16,9 @@ class Ship {
     }
     //increases the number of 'hits' in your ship.
     hit(){
-        for (let i = 0; i <= this.length.length; i++) {
+        for (let i = 0; i <= Array(this.length).length; i++) {
             this.hits += this.length[i];
+            return this.hits;
         }
     }
     //tells if a ship has sunk based on the number of hits.
@@ -32,3 +33,5 @@ class Ship {
  */
     }
 }
+
+module.exports = {Ship};
