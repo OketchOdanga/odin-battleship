@@ -16,22 +16,40 @@ class Ship {
     }
     //increases the number of 'hits' in your ship.
     hit(){
-        for (let i = 0; i <= Array(this.length).length; i++) {
+        for (let i = 0; i < Array(this.length).length; i++) {
             this.hits += this.length[i];
             return this.hits;
         }
     }
     //tells if a ship has sunk based on the number of hits.
-    isSunk() {
+    isSunk(hits) {
+        hits = this.hits;
         this.hits === this.length ? this.sunk = true : this.sunk = false;
-/* 
-        if (this.hits === this.length) {
-            this.sunk = true;
+        return this.sunk;
+
+/*         if (this.hits === this.length) {
+            return this.sunk = true;
         } else {
-            this.sunk = false;
-        }
- */
+            return this.sunk = false;
+        } */
+
     }
 }
+
+class GameBoard{
+    board = [];
+    constructor(rows,columns){
+        this.rows = rows;
+        this.columns = columns;
+    }
+}
+
+class Player{
+
+}
+
+
+
+
 
 module.exports = {Ship};
