@@ -23,9 +23,12 @@ describe('Class Ship', () => {
 })
 
 describe ('Gameboard factory function', () => {
-    const board = new GameBoard(1,1);
+    const board = new GameBoard(3,3);
     test('create grid', ()=> {
-        expect(board.createGrid(1,1)).toStrictEqual([[0]]);
+        expect(board.createGrid(3,3)).toStrictEqual([[0,0,0],[0,0,0],[0,0,0]]);
+    })
+    test('print grid', ()=> {
+        expect(board.printGrid()).toBe();
     })
 })
 
