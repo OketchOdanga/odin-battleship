@@ -36,20 +36,38 @@ class Ship {
     }
 }
 
-class GameBoard{
-    board = [];
+//GameBoard factory function.
+//?? place ships at specific coordinates by calling Class Ship.
+//?? recieveAttack() checks if the ship has been hit or not.
+//?? keep record of attacks(hits and miss).
+//?? return if all the ships have sunk.
+//const hero = document.getElementById('hero');
+class GameBoard {
     constructor(rows,columns){
         this.rows = rows;
         this.columns = columns;
     }
-}
+    createGrid(rows, columns){
+        rows = this.rows;
+        columns = this.columns;
+        let grid = [];
+        for (let i = 0; i < columns; i++) {
+            grid[i] = [];
+            for (let j = 0; j < rows; j++) {               
+            grid[i][j] = 0;
+        }
+        return grid;
+        }
+    }
+    //?? recieveAttack() checks if the ship has been hit or not.
+    recieveAttack() {
+        
+    };
+     
+};
 
-class Player{
-
-}
 
 
 
 
-
-module.exports = {Ship};
+module.exports = {Ship,GameBoard};
