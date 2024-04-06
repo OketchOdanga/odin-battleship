@@ -1,4 +1,4 @@
-const {Ship} = require('./battleship');
+const {Ship,GameBoard} = require('./battleship');
 describe('Class Ship', () => {
     const mockShip = new Ship('yatch',5,0,false);
     test('ship name',() => {
@@ -18,6 +18,14 @@ describe('Class Ship', () => {
         expect(mockShip.sunk).toBe(false)
     });
     test('if the ship has sunk using isSunk',()=>{
-        expect(mockShip.isSunk()).toBe(false)
+        expect((mockShip.isSunk(0))).toEqual(false)
     });
 })
+
+describe ('Gameboard factory function', () => {
+    const board = new GameBoard(1,1);
+    test('create grid', ()=> {
+        expect(board.createGrid(1,1)).toStrictEqual([[0]]);
+    })
+})
+
