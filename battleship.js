@@ -55,19 +55,45 @@ class GameBoard {
             grid[i] = [];
             for (let j = 0; j < rows; j++) {               
             grid[i][j] = 0;
+            }
         }
         return grid;
-        }
-    }
-    //?? recieveAttack() checks if the ship has been hit or not.
-    recieveAttack() {
-        
     };
-     
+
+    printGrid(grid, isEnemy = false){
+        grid = this.createGrid();
+        for (let i = 0; i < grid.length; i++) {
+            let rowStr = i + ' ';
+            for (const cell of grid[i]) {
+                if (isEnemy && cell == 1) {
+                    rowStr += '-'
+                } else {
+                    rowStr += cell + ' ';
+                }
+            }
+            return rowStr;           
+        }
+        //return grid;
+    };
+    //?? recieveAttack() checks if the ship has been hit or not.
+    recieveAttack(x,y,grid) {
+        grid = this.createGrid;
+        if (grid[y][x] == 1) {
+            grid[y][x] = 2;//hit and call the hit function.
+            return true;
+        } else if (grid[y][x] == 2 ) {
+            grid[y][x] == 3;//miss
+            return false;
+        } else {
+            return false;
+        }
+    };
 };
 
-
-
+/* const board = new GameBoard(4,4);
+console.log(board.createGrid(4,4));
+console.log(board.printGrid())
+ */
 
 
 module.exports = {Ship,GameBoard};
