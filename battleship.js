@@ -65,7 +65,7 @@ class GameBoard {
         for (let i = 0; i < grid.length; i++) {
             let rowStr = i + ' ';
             for (const cell of grid[i]) {
-                if (isEnemy && cell == 1) {
+                if (isEnemy && cell == 0) {
                     rowStr += '-'
                 } else {
                     rowStr += cell + ' ';
@@ -73,15 +73,17 @@ class GameBoard {
             }
             return rowStr;           
         }
-        //return grid;
+        
     };
+    //placeShip
+    
     //?? recieveAttack() checks if the ship has been hit or not.
     recieveAttack(x,y,grid) {
         grid = this.createGrid;
         if (grid[y][x] == 1) {
             grid[y][x] = 2;//hit and call the hit function.
             return true;
-        } else if (grid[y][x] == 2 ) {
+        } else if (grid[y][x] == 0 ) {
             grid[y][x] == 3;//miss
             return false;
         } else {
