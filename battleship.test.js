@@ -28,7 +28,10 @@ describe ('Gameboard factory function', () => {
         expect(board.createGrid(3,3)).toStrictEqual([[0,0,0],[0,0,0],[0,0,0]]);
     })
     test('print grid', ()=> {
-        expect(board.printGrid()).toBe();
+        expect(board.printGrid()).toBe("0 0 0 0 ");
+    })
+    test('recieve attack', ()=> {
+        expect(board.recieveAttack(0,0,[[0,0,0],[0,0,0],[0,0,0]])).toBe(false)
     })
 })
 
