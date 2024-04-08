@@ -80,7 +80,7 @@ class GameBoard {
     
     //?? recieveAttack() checks if the ship has been hit or not.
     recieveAttack(x,y,grid) {
-        grid = this.createGrid; 
+        grid = this.createGrid(); 
         if (grid[y][x] == 1) {
             grid[y][x] = 2;//hit and call the hit function.
             hit = this.ship.hit();
@@ -96,7 +96,8 @@ class GameBoard {
 
 /* const board = new GameBoard(4,4);
 console.log(board.createGrid(4,4));
-console.log(board.printGrid()) */
+console.log(board.printGrid());
+console.log(board.recieveAttack(1,1)) */
 
 
 
