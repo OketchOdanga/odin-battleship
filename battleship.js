@@ -43,6 +43,7 @@ class Ship {
 //?? return if all the ships have sunk.
 //const hero = document.getElementById('hero');
 class GameBoard {
+    ship = new Ship();
     constructor(rows,columns){
         this.rows = rows;
         this.columns = columns;
@@ -71,7 +72,7 @@ class GameBoard {
                     rowStr += cell + ' ';
                 }
             }
-            return rowStr;           
+            console.log(rowStr) ;           
         }
         
     };
@@ -79,9 +80,10 @@ class GameBoard {
     
     //?? recieveAttack() checks if the ship has been hit or not.
     recieveAttack(x,y,grid) {
-        grid = this.createGrid;
+        grid = this.createGrid; 
         if (grid[y][x] == 1) {
             grid[y][x] = 2;//hit and call the hit function.
+            hit = this.ship.hit();
             return true;
         } else if (grid[y][x] == 0 ) {
             grid[y][x] == 3;//miss
@@ -92,10 +94,10 @@ class GameBoard {
     };
 };
 
-/* const board = new GameBoard(4,4);
+const board = new GameBoard(4,4);
 console.log(board.createGrid(4,4));
 console.log(board.printGrid())
- */
+
 
 
 module.exports = {Ship,GameBoard};
