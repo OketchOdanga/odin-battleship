@@ -94,9 +94,9 @@ class GameBoard {
     };
 };
 
-const board = new GameBoard(4,4);
+/* const board = new GameBoard(4,4);
 console.log(board.createGrid(4,4));
-console.log(board.printGrid())
+console.log(board.printGrid()) */
 
 
 
