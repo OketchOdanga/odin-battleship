@@ -36,7 +36,7 @@ class Ship {
     }
 }
 
-//GameBoard factory function.
+//GameBoard class/factory function.
 //?? place ships at specific coordinates by calling Class Ship.
 //?? recieveAttack() checks if the ship has been hit or not.
 //?? keep record of attacks(hits and miss).
@@ -60,6 +60,7 @@ class GameBoard {
         }
         return grid;
     };
+    
 
     printGrid(grid, isEnemy = false){
         grid = this.createGrid();
@@ -77,7 +78,10 @@ class GameBoard {
         
     };
     //placeShip
-    
+    placeYourShip(){}
+
+
+
     //?? recieveAttack() checks if the ship has been hit or not.
     recieveAttack(x,y,grid) {
         grid = this.createGrid(); 
