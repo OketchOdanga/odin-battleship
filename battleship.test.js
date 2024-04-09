@@ -33,5 +33,7 @@ describe ('Gameboard factory function', () => {
     test('recieve attack', ()=> {
         expect(board.recieveAttack(0,0,[[0,0,0],[0,0,0],[0,0,0]])).toBe(false)
     })
+    test('place ship', ()=> {
+    })
 })
 
